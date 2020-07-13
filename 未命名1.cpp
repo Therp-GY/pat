@@ -1,39 +1,15 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include<vector>
+using namespace std; 
 
-#define MAXSIZE 1000
-int queue[MAXSIZE];
-int front = -1;
-int reer = -1;
-void inQ(int ele){
-	if((reer+1)%MAXSIZE == front){
-		printf("队列已满");
-	}else{
-		reer ++;
-		queue[reer] = ele;
-	}
-}
+int fun(int (*a)[3]){
+	a[1][2] = 3;
+} 
 
-int outQ(){
-	if(front == reer){
-		printf("队列空");
-		return -11111111;
-	}else{
-		front++;
-		return queue[front];
-	}
-}
-
-struct node{
-	int value;
-	struct node* leftNode;
-	struct node* rightNode;
-}node;
-
-typedef struct node* ptrNode;
- 
 int main(){
-	
+	int  a[2][3] = {0};	
+	fun(a);
+	printf("%d", a[1][2]);
 	
 	return 0;
 }
